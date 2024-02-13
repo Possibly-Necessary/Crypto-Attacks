@@ -195,7 +195,7 @@ func main() {
 	fmt.Println("Random number r = ", R)
 
 	// Divide the modofied decrypted message by r
-	// First convert R to big.Int to rm's type
+	// First convert R to big.Int to match rm's type
 	RR := big.NewInt(int64(R))
 	DivByR := new(big.Int).Div(rm, RR) // rm / RR
 
