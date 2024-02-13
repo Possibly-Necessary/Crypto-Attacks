@@ -175,7 +175,7 @@ func main() {
 	re := new(big.Int).Exp(r, e, N) // r^e (mod N)
 	rc := Malleable(c, re)
 
-	// Decrypt using the  private key ()
+	// Decrypt using the  private key
 	rm := Decrypt(rc, d, N)
 	fmt.Println("Decrypting the modified cipher text c' => ", rm)
 
