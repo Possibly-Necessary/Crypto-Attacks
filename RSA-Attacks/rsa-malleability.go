@@ -119,9 +119,9 @@ func txtBookRSA(bitSize int) (*big.Int, *big.Int, *big.Int) { // Returns e, d, N
 	N := new(big.Int).Mul(p, q)
 
 	// Calculate phi = (p-1)*(q-1)
-	pMinus1 := new(big.Int).Sub(p, big.NewInt(1))
-	qMinus1 := new(big.Int).Sub(q, big.NewInt(1))
-	phi := new(big.Int).Mul(pMinus1, qMinus1)
+	pMinus1 := new(big.Int).Sub(p, big.NewInt(1)) // (p-1)
+	qMinus1 := new(big.Int).Sub(q, big.NewInt(1)) // (q-1)
+	phi := new(big.Int).Mul(pMinus1, qMinus1) // (p-1)*(q-1)
 
 	// Calculate d the modular inverse of e mod phi
 	d := new(big.Int).ModInverse(e, phi)
