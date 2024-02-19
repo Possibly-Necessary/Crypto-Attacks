@@ -175,6 +175,8 @@ func main() {
 
 	// Encrypting 100
 	fmt.Println("Encrypting the message 'What's your vector, Victor?' using text book RSA.\n")
+
+	// Quote reference: https://www.youtube.com/watch?v=2OBZf0QdKdE
 	m := "What's your vector, Victor?"
 
 	// Convert string to bytes
