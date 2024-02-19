@@ -131,7 +131,7 @@ func txtBookRSA(bitSize int) (*big.Int, *big.Int, *big.Int) { // Returns e, d, N
 }
 
 // Encryption/Decryption using the textbook RSA we defined earlier
-// Function that encryptes messages using the public key (e, N)
+// Function that encrypts messages using the public key (e, N)
 func Encrypt(m, e, N *big.Int) *big.Int { // Will change from accepting messages as []bytes to int
 	//m := new(big.Int).SetBytes(message)
 	//m := big.NewInt(int64(message))
@@ -139,7 +139,7 @@ func Encrypt(m, e, N *big.Int) *big.Int { // Will change from accepting messages
 	return c
 }
 
-// Function that decryptes messages using the private key (d, N)
+// Function that decrypts messages using the private key (d, N)
 func Decrypt(c, d, N *big.Int) *big.Int {
 	m := new(big.Int).Exp(c, d, N) // m = c^d mod N
 
@@ -194,7 +194,7 @@ func main() {
 	fmt.Println()
 	fmt.Println("Random number r = ", R)
 
-	// Divide the modofied decrypted message by r
+	// Divide the modified decrypted message by r
 	// First convert R to big.Int to match rm's type
 	RR := big.NewInt(int64(R))
 	DivByR := new(big.Int).Div(rm, RR) // rm / RR
