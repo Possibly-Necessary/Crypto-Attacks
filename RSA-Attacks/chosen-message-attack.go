@@ -151,7 +151,7 @@ func SignaturVerification(m, sig, e, N *big.Int) bool {
 }
 
 // Function to forge signatures
-func ForgeSingature(m, d, N *big.Int) (*big.Int, *big.Int, *big.Int, *big.Int) {
+func ForgeSignature(m, d, N *big.Int) (*big.Int, *big.Int, *big.Int, *big.Int) {
 
 	// Generate a random r
 	rand.Seed(time.Now().UnixNano())
@@ -207,7 +207,7 @@ func main() {
 	mInt := new(big.Int).SetBytes(mBytes)
 	fmt.Println("Message M converted to integer:", mInt.String()[:5]) // mInt is a big integer, so we print out the first 5 digits
 	fmt.Println()
-	sigM, m1, _, m2 := ForgeSingature(mInt, d, N)
+	sigM, m1, _, m2 := ForgeSignature(mInt, d, N)
 	fmt.Println("M1 = r => ", m1.String()[:5])
 	fmt.Println("M2 = M * r ^(-1) mod N => ", m2.String()[:5])
 	fmt.Println()
